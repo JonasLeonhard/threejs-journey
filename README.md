@@ -1,4 +1,4 @@
-<img src="https://shields.io/badge/threejs-journey.com-online-green?style=flat-square&logo=statuspal" />
+<img src="https://shields.io/badge/threejs--journey.com-online-green?style=flat-square&logo=statuspal" />
 
 <img src="https://shields.io/badge/course-not_finished-red?style=flat-square&logo=github" />
 
