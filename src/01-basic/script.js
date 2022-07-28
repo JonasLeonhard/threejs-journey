@@ -1,3 +1,6 @@
+import * as THREE from "three";
+import "./style.css";
+
 const config = {
   width: 800,
   height: 600,

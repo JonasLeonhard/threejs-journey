@@ -40,11 +40,15 @@ Main Technologies used in the project:
   - Webgl
 
 ## Setup
-[Lesson]: Each Lesson has its own directory. 
+Run, to see a message: 
 ```
-
-open the lesson in your browser and view it there.
+yarn start
 ```
+```
+Project running at:
+  - http://[local-ip]:8080
+```
+Navigate to the subfolder you want to view. eg. '/01-basic'.
 
 ## Known Issues
 -
