@@ -13,7 +13,7 @@ const configs = directories.map((directory) => ({
   html: path.resolve(__dirname, `../src/${directory}/index.html`),
 }));
 
-console.log('configs', configs);
+console.log("configs", configs);
 
 module.exports = configs.map((config) => ({
   entry: config.entry,
@@ -34,14 +34,16 @@ module.exports = configs.map((config) => ({
     }),
     new MiniCSSExtractPlugin({
       filename: `${config.name}/style.css`,
-    })
+    }),
   ],
   module: {
     rules: [
       // HTML
       {
         test: /\.(html)$/,
-        exclude: [path.resolve(__dirname, `../src/${config.name}/index.html`)], // let htmlwebpackplugin handle loading of this index file
+        exclude: configs.map((c) =>
+          path.resolve(__dirname, `../src/${c.name}/index.html`)
+        ), // let htmlwebpackplugin handle loading of this index files
         use: ["html-loader"],
       },
 

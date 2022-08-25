@@ -11,6 +11,7 @@
     "dev": "yarn build && webpack serve --config ./bundler/webpack.dev.js"
   },
   "dependencies": {
+    "gsap": "^3.11.0",
     "three": "^0.140.0"
   },
   "devDependencies": {
@@ -28,6 +29,7 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.0",
     "portfinder-sync": "0.0.2",
+    "prettier": "2.7.1",
     "raw-loader": "^4.0.2",
     "style-loader": "^3.3.1",
     "webpack": "^5.72.0",
