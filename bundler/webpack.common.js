@@ -1,6 +1,5 @@
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 const fs = require("fs");
 
@@ -15,26 +14,28 @@ const configs = directories.map((directory) => ({
 
 console.log("configs", configs);
 
-module.exports = configs.map((config) => ({
-  entry: config.entry,
+module.exports = {
+  entry: configs.reduce((acc, config) => {
+    acc[config.name] = config.entry;
+    return acc;
+  }, {}),
   output: {
     hashFunction: "xxhash64",
-    filename: `${config.name}/${config.name}.bundle.[contenthash].js`,
+    filename: `[name]/[name].bundle.[contenthash].js`,
     path: path.resolve(__dirname, "../dist"),
+    clean: true,
   },
   devtool: "source-map",
   plugins: [
-    new CopyWebpackPlugin({
-      patterns: [{ from: path.resolve(__dirname, "../static") }],
-    }),
-    new HtmlWebpackPlugin({
-      template: config.html,
-      minify: true,
-      filename: `${config.name}/index.html`,
-    }),
-    new MiniCSSExtractPlugin({
-      filename: `${config.name}/style.css`,
-    }),
+    ...configs.map(
+      (config) =>
+        new HtmlWebpackPlugin({
+          template: config.html,
+          minify: true,
+          filename: `${config.name}/index.html`,
+          chunks: [config.name],
+        })
+    ),
   ],
   module: {
     rules: [
@@ -56,8 +57,8 @@ module.exports = configs.map((config) => ({
 
       // CSS
       {
-        test: /\.css$/,
-        use: [MiniCSSExtractPlugin.loader, "css-loader"],
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
 
       // Images
@@ -79,4 +80,4 @@ module.exports = configs.map((config) => ({
       },
     ],
   },
-}));
+};
