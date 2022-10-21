@@ -5,9 +5,6 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 const canvas = document.querySelector("canvas.webgl");
 const scene = new THREE.Scene();
 
-/**
- * Mesh
- */
 const geometry = new THREE.BoxGeometry(1, 1, 1);
 const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
 const mesh = new THREE.Mesh(geometry, material);
@@ -34,8 +31,28 @@ const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
 });
 renderer.setSize(sizes.width, sizes.height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 const clock = new THREE.Clock();
+
+window.addEventListener("dblclick", () => {
+  const fullscreenElement =
+    document.fullscreenElement || document.webkitFullscreenElement;
+
+  if (!fullscreenElement) {
+    if (canvas.requestFullscreen) {
+      canvas.requestFullscreen();
+    } else if (canvas.webkitRequestFullscreen) {
+      canvas.webkitRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
+  }
+});
 
 window.addEventListener("resize", () => {
   sizes.width = window.innerWidth;
@@ -45,6 +62,7 @@ window.addEventListener("resize", () => {
   camera.updateProjectionMatrix();
 
   renderer.setSize(sizes.width, sizes.height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
 const tick = () => {
