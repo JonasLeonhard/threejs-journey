@@ -27,6 +27,9 @@ module.exports = {
   },
   devtool: "source-map",
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [{ from: path.resolve(__dirname, "../static") }],
+    }),
     ...configs.map(
       (config) =>
         new HtmlWebpackPlugin({
