@@ -47,7 +47,7 @@ This Project aims to help me learn about three.js and webgl.
 ![Lights](./readme/lights.gif)
 ![Shadows](./readme/shadows.gif)
 ![House Scene](./readme/haunted-house.gif)
-![Particles](./readme/Particles.gif)
+![Particles](./readme/particles.gif)
 
 ## Technologies
 
