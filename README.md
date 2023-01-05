@@ -40,14 +40,14 @@ This Project aims to help me learn about three.js and webgl.
 ## Screenshots
 
 ![Threejs-journey](./readme/threejs-journey.png)
-![Debugging](./readme/debug-ui.gif)
+![Debugging](./readme/debug-ui-min.gif)
 ![Texturing](./readme/texturing.gif)
-![Materials](./readme/materials.gif)
+![Materials](./readme/materials-min.gif)
 ![Text](./readme/text.gif)
-![Lights](./readme/lights.gif)
+![Lights](./readme/lights-min.gif)
 ![Shadows](./readme/shadows.gif)
-![House Scene](./readme/haunted-house.gif)
-![Particles](./readme/particles.gif)
+![House Scene](./readme/haunted-house-min.gif)
+![Particles](./readme/particles-min.gif)
 
 ## Technologies
 
