@@ -60,6 +60,15 @@ Main Technologies used in the project:
   - gsap
   - cannon-es
 
+It covers the following aspects about three.js:
+
+- basis (what is webgl, responsive canvas, groups, meshes (Cube, Torus, Box, Custom...), material, cameras, lights, textures, 3dtext, scene, properties eg. position, rotation..., animation, optimization)
+- lights and shadows (AmbientLight, DirectionalLight, HemisphereLight, PointLight, RectAreaLight, Spotlight, Shadowmaps & sizes, Baking Shadows, Shadow Resolution, Shadow Blur, Shadow Camera)
+- particles (PointsMesh, PointsMaterial, CustomGeometry, ColorMap, AlhpaMap, Alphatests, depthwrite, animations, )
+- physics (w. cannon-es, rigidbody, collisions, collision-events, performance (sleep, removing components, Broadphase, as a worker), ContactMaterials, Applying Forces)
+- importing models (gltf, draco, embedded, other formats, using animations)
+- raycasting (mouse & originRays) & reacting to events: mouse -> scroll, click, mouse-enter, mouse-leave
+
 ## Setup
 
 Run, to see a message:
