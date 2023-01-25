@@ -55,6 +55,10 @@ Main Technologies used in the project:
 
 - Three.js
   - Webgl
+  - dat.gui
+  - lil.gui
+  - gsap
+  - cannon-es
 
 ## Setup
 
