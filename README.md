@@ -59,6 +59,7 @@ Main Technologies used in the project:
   - lil.gui
   - gsap
   - cannon-es
+  - draco
 
 It covers the following aspects about three.js:
 
@@ -68,6 +69,7 @@ It covers the following aspects about three.js:
 - physics (w. cannon-es, rigidbody, collisions, collision-events, performance (sleep, removing components, Broadphase, as a worker), ContactMaterials, Applying Forces)
 - importing models (gltf, draco, embedded, other formats, using animations)
 - raycasting (mouse & originRays) & reacting to events: mouse -> scroll, click, mouse-enter, mouse-leave
+- shaders (fragment & vertex, glsl, attributes, uniforms, varying, Textures w. sampler2D, Datatypes float, bool, vec234, sin, cos, amx, min, pow, exp, mod, sclamp, cross, dot, mix, step, smoothstep, length, distance, reflect, refract, normalize,)
 
 ## Setup
 
