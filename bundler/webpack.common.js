@@ -57,6 +57,11 @@ module.exports = {
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
+      // GLSL
+      {
+        test: /\.glsl$/,
+        loader: "webpack-glsl-loader",
+      },
 
       // CSS
       {
